@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link href="imagenes/img/logocorreccion.png" rel="shortcut icon" type="image/png"/>
+        <title>Registro</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="css/estilos_formulario.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+         <f:loadBundle id="loadb" basename="edu.f1694094.properties.#{idiomaSession.idioma}" var="vaka"></f:loadBundle>
+    </h:head>
+
+
+    <h:body>
+
+        <!-- Boton Idioma --> 
+
+
+        <div>
+              <nav class="full-box dashboard-Navbar">
+                <h:form>
+                    <h:commandButton value="Español"
+                                     action="#{idiomaSession.cambiarIdioma('espaniol')}"
+                                     rendered="#{idiomaSession.idioma== 'ingles'}" image="imagenes/img/colombiana.png" style="width: 60px; height: 35px; margin-top: 4px; float: right; margin-right: 8px;"/>
+                   
+                    <h:commandButton value="Ingles"
+                                     action="#{idiomaSession.cambiarIdioma('ingles')}"
+                                     rendered="#{idiomaSession.idioma== 'espaniol'}" image="imagenes/img/inglesa.png" style="width: 60px; height: 35px; margin-top: 4px; float: right; margin-right: 8px;"/>
+
+                </h:form>    
+            </nav>
+        </div>
+        <br/>
+        <br/>
+        <!-- Fin Boton Idioma -->   
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+
+            }
+            body{
+
+                background: url(imagenes/imagesn/cos.jpg) no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+
+
+            }
+
+
+            @media (max-width:900px){
+
+                body{
+                    background-image: url(imagenes/imagesn/cos.jpg);
+                    background-size: auto;
+
+
+                }
+            }
+        </style>
+
+        <!-- Contenedor -->  
+
+        <div class="container" style=" color: white; background: rgba(0,0,0,0.6);margin-top: 11%;">
+
+            <!-- Formulario --> 
+
+            <h:form>
+
+                <div class="form-group">
+                    <label for="emi">#{vaka.correoElectronico}</label>
+
+                    <h:inputText  html5:type="email" value="#{ususarioSession.correo}" validatorMessage="#{vaka.validcorreo}" requiredMessage="#{vaka.escribcorreo}" id="emi" required="true" class="form-control">
+                        <f:validateLength minimum="8"></f:validateLength>
+                    </h:inputText> 
+                    <h:message showSummary="false" for="emi" style="color: red"/>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="cont">#{vaka.contraseniaa}</label>
+
+                    <h:inputSecret  value="#{ususarioSession.clave}" validatorMessage="#{vaka.contraespa}" requiredMessage="#{vaka.contraespa2} " id="cont" required="true" class="form-control">
+                        <f:validateLength minimum="8"></f:validateLength>
+                    </h:inputSecret>
+                    <h:message showSummary="false" for="cont" style="color: red;"/>
+                </div>
+                <a href="RecuperarContrasena1.xhtml">#{vaka.contraolvida}</a> 
+                <div class="row justify-content-around">
+                    <div class="form-group col-md-6">
+                        <h:commandButton class="btn btn-success  btn-lg btn-block" value="#{vaka.ingreso}" action="#{ususarioSession.validarUsuario()}"></h:commandButton>
+                    </div>
+
+                    <div class="form-group col-md-6">
+
+                        <a href="index.xhtml" style="list-style: none; text-decoration: none;"><button type="button" class="btn btn-danger btn-lg btn-block">#{vaka.cancel}</button></a>
+
+                    </div>
+                </div>
+            </h:form> 
+            <!-- Fin Formulario -->   
+        </div>
+
+        <!-- Bootstrap CSS Y JQUERY -->	
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </h:body>
+</html>
+

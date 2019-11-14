@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Validar si la contraseña y la repetición de la contraseña son iguales</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"></link>
+    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <h:form>
+            <div class="field">
+  <label class="label">Nueva contraseña</label>
+  <div class="control">
+      <h:inputSecret class="input is-info" value="#{ususarioSession.clave}"></h:inputSecret>
+  </div>
+</div>
+            <div class="field">
+  <label class="label">Validar contraseña</label>
+  <div class="control">
+      <h:inputSecret class="input is-info" value="#{ususarioSession.clave2}"></h:inputSecret>
+  </div>
+</div>
+            <div class="field is-grouped">
+  <div class="control">
+      <h:commandButton class="button is-success" value="Cambiar" action="#{ususarioSession.validarCamposContrasenia()}"></h:commandButton>
+  </div>
+  <div class="control">
+    <a class="button is-link is-delete">Cancelar</a>
+  </div>
+</div>
+        </h:form>
+        </div>
+        
+        <script>
+            $.material.init();
+        </script>
+    </h:body>
+</html>
+
