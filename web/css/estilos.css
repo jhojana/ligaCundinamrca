@@ -1,0 +1,320 @@
+*
+{
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+/*Clases especiales*/
+.borde{
+	border: 1px solid black;
+}
+.titulo{
+	width: 100%;
+	background:#4D84D3;
+	text-align: center;
+	font-family: 'Pattaya', sans-serif;       /*titulos de quienes somos */
+	color: white;
+	padding: 70px;
+}
+.opacidad{
+	width: 100%;
+	height: 100%;
+}
+body{
+	background: rgba(0,0,0,0.9);
+	background-size: 100% 100%;
+	background-attachment: fixed; 
+}
+
+
+
+
+/*Navegador*/
+
+img.icono_menudo{
+
+width: 100%;
+
+}
+img#me_desple{
+
+width: 19px;
+
+}
+
+header{
+height: 50px;
+background: #4D84D3;
+display: flex;
+align-items: center;
+
+}
+
+#boton_menu{
+
+display: none;
+
+}
+
+header label.post{
+
+width: 50px;
+height: 50px;
+padding: 8px;
+border-right: 1px solid #ffff;
+display:none;
+
+}
+
+header label.post:hover{
+
+cursor: pointer;
+background: rgba(0,0,0,0.3);
+}
+
+
+nav.Menu{
+
+width: 100%;
+position:absolute;
+
+}
+
+nav.Menu ul{
+
+background: #4D84D3;
+display: flex;
+list-style: none;
+justify-content: center;
+
+}
+
+nav.Menu li ul{
+
+	display:none;
+}
+
+nav.Menu a{
+
+display: block;
+text-decoration: none;
+padding: 15px 25px;
+color: #ffff;
+background: #4D84D3;
+
+}
+
+nav.Menu a:hover{
+
+background: #729FDF;
+
+}
+
+nav.Menu a span{
+
+margin-left: 10px;
+
+}
+
+nav.Menu ul li:hover ul{
+display:block; ;
+position: absolute;
+}
+
+
+header label.potero:hover{
+
+cursor: pointer;
+
+}
+
+
+@media (max-width:768px){
+
+header label.post{
+
+display: block;
+
+}
+
+header{
+width: 100%;
+position:absolute;
+
+}
+
+nav.Menu{
+position:absolute;
+top: 50px;
+left: 0;
+width: 50%;
+transform: translateX(-100%);
+transition: all 0.3s;
+}
+
+nav.Menu ul{
+
+	display: block;
+	background: #817F7E;
+}
+
+
+nav.Menu ul li:hover ul{
+
+display: block;
+position: static;
+}
+
+nav.Menu a span{
+
+position: absolute;
+right: 5px;
+
+}
+
+#boton_menu:checked ~ nav.Menu{
+
+transform: translateX(0%);
+position: absolute;
+
+}
+
+
+}
+
+
+/*logo pequeño*/
+
+/*logo grende*/
+div.manua{
+	
+	background:url(../imagenes/imagesn/imagen_1.jpg);
+	background-size:100% 100%;
+	background-attachment :fixed;
+
+	}
+.logouno img {
+	width: 53%;
+	
+	margin-left:27%;
+	padding: 15px;
+	
+	
+}
+
+.logouno{
+
+background: rgba(0,0,0,0.3);
+
+}
+
+
+
+/*Quiénes somos*/
+section.quienes-somos{
+	height: 100%;
+	background:url(../imagenes/imagesn/imagen_12.jpg);
+	background-size:100% 100%;
+}
+
+.pollo{
+
+background: rgba(0,0,0,0.6);
+
+}
+
+/*Titulo y parrafo*/
+
+.colresas{
+
+color: #EF4A4A;
+text-align:center;
+}
+
+.colresas2{
+
+color:#ffff;
+font-size: 17px;
+
+}
+
+/*Imagenes*/
+
+.colera{
+
+width: 100%;
+height: 316px;
+
+}
+
+/*Galeria*/
+
+.Galeria1{
+
+	width: 100%;
+	height: 850px;
+	background-image: url(../imagenes/imagesn/1.jpg);
+	background-size:100% 100%;
+	
+
+}
+
+.contera{
+
+background:rgba(0,0,0,0.6);
+width: 100%;
+height: 100%;
+
+}
+
+.ejemplo12{
+
+width: 300px;
+height: auto;
+margin-top: 100px;
+margin-left: 100px;
+
+}
+
+.ejemplo:hover .borde li {
+
+background:#729FDF;
+
+
+}
+
+/*Contáctenos*/
+
+.contactenos{
+	
+	background-image: url(../imagenes/imagesn/imagen_6.jpg);
+	background-size:100% 100%;
+
+}
+
+.dadad{
+
+background: rgba(0,0,0,0.6);
+
+}
+
+.formii{
+
+	color: white;
+	background:rgba(0,0,0,0.4);
+}
+
+.borde_campo-abajo{
+width: 100%;
+	background:#4D84D3;
+	text-align: center;
+	font-family: 'Pattaya', sans-serif;       /*titulos de quienes somos */
+	color: white;
+	padding: 70px
+}
+
+
+
+
+
+

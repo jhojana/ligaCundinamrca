@@ -1,0 +1,58 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-image: url(../imagenes/img/textura pastel.png);
+	background-size: 100% 100%;
+	background-attachment: fixed;
+
+}
+form{
+width: 30%;
+margin: auto;
+background: #ddd;
+padding: 20px;
+text-align: center;
+margin-top: 120px;
+border-radius: 20px;
+}
+form .form-enc{
+padding: 20px;
+border-bottom: 1px solid #e67e22;
+}
+form .form-cuerpo{
+padding: 20px;
+border-bottom: 1px solid #e67e22;
+}
+form .form-pie{
+padding: 20px;
+
+}
+form label{
+	display: inline-block;
+	width: 90px;
+	padding: 10px;
+	text-align: left;
+}
+form input{
+display: inline-block;	
+padding: 5px;
+}
+form a{
+text-decoration: none;
+padding: 3px;
+display: inline;
+color: #fff;
+background: #C8C8C8;
+border-radius: 6px;
+border: 1px solid #e67e22;
+}
+form a:hover{
+color: #fff;
+background: #FFDAB3;
+}
+.salir{
+	margin: 20px 30px 15px 50px; 
+}

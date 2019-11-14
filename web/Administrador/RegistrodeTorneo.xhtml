@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+
+        <title>Administrador</title>
+            <link href="../imagenes/img/logocorreccion.png" rel="shortcut icon" type="image/png"></link>
+        <link href="imagenes/img/logocorreccion.png" rel="shortcut icon" type="image/png"/>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+        <link rel="stylesheet" href="../estilos_Roles/css/main.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"></link>
+        <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <link rel="stylesheet" href="../css/picker/jquery.datetimepicker.min.css"></link>
+        <f:loadBundle id="loadb" basename="edu.f1694094.properties.#{idiomaSession.idioma}" var="vaka"></f:loadBundle>
+    </h:head>
+
+    <h:body>
+
+        <!-- Datos de menu  -->
+       <section class="full-box cover dashboard-sideBar">
+            <div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
+            <div class="full-box dashboard-sideBar-ct">
+
+
+                <!--Titulo de Inicio -->
+                <div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
+                    #{vaka.arbitro} <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+                </div>
+                <!-- Infornacion de usuario  -->
+                <div class="full-box dashboard-sideBar-UserInfo">
+                    <figure class="full-box">
+                        <a href="../Actualizar Informacion/Actualizar_Datos.xhtml"><img src="#{ususarioSession.usuarioLong.rutaImgUsuario}" alt="UserIcon"/></a>
+                        <figcaption class="text-center text-titles">#{ususarioSession.usuarioLong.usuNombres}</figcaption>
+
+                    </figure>
+                     <ul class="full-box list-unstyled text-center">
+                        <li>
+                            <a href="../Actualizar Informacion/Actualizar_Datos.xhtml">
+                                <i class="zmdi zmdi-settings" title="#{vaka.ajustes}"></i>
+                            </a>
+                        </li>
+                        <li>
+                             <a class="exit-system" title="#{vaka.salir}">
+                                <i class="zmdi zmdi-power"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--  Menu -->
+                <ul class="list-unstyled full-box dashboard-sideBar-Menu">
+                    <li>
+                        <a href="inicio.xhtml">
+                            <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> #{vaka.inicio}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!" class="btn-sideBar-SubMenu">
+                            <i class="zmdi zmdi-case zmdi-hc-fw"></i> #{vaka.torneo} <i class="zmdi zmdi-caret-down pull-right"></i>
+                        </a>
+                        <ul class="list-unstyled full-box">
+                            <li>
+                                <a href="RegistrodeTorneo.xhtml"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>#{vaka.crarTor}</a>
+                            </li>
+                            <li>
+                                <a href="listarTorneo.xhtml"><i class="zmdi zmdi-book zmdi-hc-fw"></i>#{vaka.listaTor}</a>
+                            </li>
+
+
+                        </ul>
+                        <li>
+                        <a href="#!" class="btn-sideBar-SubMenu">
+                            <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>  #{vaka.registro} <i class="zmdi zmdi-caret-down pull-right"></i>
+                        </a>
+                        <ul class="list-unstyled full-box">
+                            <li>
+                                <a href="RegistroArbitro.xhtml"> <i class="zmdi zmdi-timer zmdi-hc-fw"></i>#{vaka.arbitro}</a>
+                            </li>                   
+                        </ul>
+                    </li>
+                    </li>
+                    <li>
+                        <a href="#!" class="btn-sideBar-SubMenu">
+                            <i class="zmdi zmdi-account-add zmdi-hc-fw"></i> #{vaka.listar1} <i class="zmdi zmdi-caret-down pull-right"></i>
+                        </a>
+                        <ul class="list-unstyled full-box">
+                            <li>
+                                <a href="ListarJugadoresadmin.xhtml"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> #{vaka.jygadoresRegistrados}</a>
+                            </li>
+                            <li>
+                                <a href="Lista_de_Equiposadmin.xhtml"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> #{vaka.equipo}</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#!" class="btn-sideBar-SubMenu">
+                            <i class="zmdi zmdi-account zmdi-hc-fw"></i> <i class="zmdi zmdi-caret-down pull-right"></i>#{vaka.reportes}
+                        </a>
+                        <ul class="list-unstyled full-box">
+                            <li>
+                                <a href="contactos.xhtml"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>#{vaka.contacto}</a>
+                            </li>
+                        
+
+                        </ul>
+                    </li>                      
+                    <li>
+                        <a href="#!" class="btn-sideBar-SubMenu">
+                            <i class="zmdi zmdi-account zmdi-hc-fw"></i> <i class="zmdi zmdi-caret-down pull-right"></i>#{vaka.enviarCorreos}
+                        </a>
+                        <ul class="list-unstyled full-box">
+                            <li>
+                                <a href="Eventos.xhtml"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>#{vaka.correoElectronico}</a>
+                            </li>
+                        </ul>
+                    </li>                    
+                </ul>
+            </div>
+        </section>
+        <!-- Fin de menu -->
+        <section class="full-box dashboard-contentPage">
+            <!-- Barra de notificaciones  -->
+             <nav class="full-box dashboard-Navbar">
+                  <h:form>
+                    <h:commandButton value="Español"
+                                     action="#{idiomaSession.cambiarIdioma('espaniol')}"
+                                     rendered="#{idiomaSession.idioma== 'ingles'}" image="../imagenes/img/colombiana.png" style="width: 60px; height: 35px; margin-top: 4px; float: right; margin-right: 8px;"/>
+                   
+                    <h:commandButton value="Ingles"
+                                     action="#{idiomaSession.cambiarIdioma('ingles')}"
+                                     rendered="#{idiomaSession.idioma== 'espaniol'}" image="../imagenes/img/inglesa.png" style="width: 60px; height: 35px; margin-top: 4px; float: right; margin-right: 8px;"/>
+                   
+                </h:form>   
+            </nav>  
+            
+           <div class="f col-xm-10 col-xs-8" style="left: 20%; margin-top: 30px;">
+
+                <div class="field" style="text-align: center; margin-top: 10%" >
+                    <h1 style="color: black ;text-align: center; text-shadow: 2px 2px 4px #5BA0CA; font-size: 25px;">#{vaka.registroTorneos}</h1>
+                </div>
+
+                <h:form>
+                    <div class="field">
+                        <label  style="color: #000">#{vaka.nombreTorneo}</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <h:inputText class="input is-info" html5:placeholder="#{vaka.nombreTorneo}" onkeypress="return validar(event)" value="#{ususarioSession.nombreTorneo}"
+                                   required="true" id="nombreTorneo"   validatorMessage="#{vaka.datosMinimos}" requiredMessage="#{vaka.escribeDato}">  
+                                <f:validateLength minimum="5" maximum="30"></f:validateLength>    
+                            </h:inputText>
+                            <span class="icon is-small is-left">
+                                <i class="far fa-clipboard"></i>
+                            </span>                            
+                        </div>
+                       <h:message showSummary="false" for="nombreTorneo" style="color: red"/>
+                    </div>
+
+                    <div class="field">
+                        <label  style="color: #000">#{vaka.fechaInicio}</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <h:inputText html5:type="datatime" class="input is-info datetime" html5:placeholder="dd/mm/aaaa hh:mm" value="#{ususarioSession.fechaInicio}" validatorMessage="fecha invalida" requiredMessage="#{vaka.selesccionFecha}"
+                                 required="true" id="fechainicio" > 
+                            </h:inputText>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-calendar-alt"></i>
+                            </span>
+                        </div>
+                        <h:message showSummary="false" for="fechainicio" style="color: red"/>
+                    </div>
+                    <div class="field">
+                        <label  style="color: #000">#{vaka.fechaFinal}</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <h:inputText html5:type="datatime" class="input is-info datetime" html5:placeholder="dd/mm/aaaa hh:mm" value="#{ususarioSession.fechaFin}"  validatorMessage="fecha invalida" requiredMessage="#{vaka.selesccionFecha}"
+                                            required="true" id="fechafin" >
+                            
+                            </h:inputText>
+                            <span class="icon is-small is-left">
+                                <i class="far fa-calendar-alt"></i>
+                            </span>
+                        </div>
+                   <h:message showSummary="false" for="fechafin" style="color: red"/>
+                    </div>
+                    <div class="field">
+                        <label  style="color: #000">#{vaka.tipoCategoria}</label>
+                        <div class="control">
+                            <div class="select is-info">
+                                <h:selectOneMenu styleClass="custom-select" value="#{ususarioSession.categorias}">
+                                    <f:selectItem itemLabel="#{vaka.juvenil}" itemValue="Juvenil"></f:selectItem>
+                                    <f:selectItem itemLabel="#{vaka.infantil}" itemValue="Infantil"></f:selectItem>
+                                    <f:selectItem itemLabel="#{vaka.mayores}" itemValue="Mayores"></f:selectItem>
+                               
+                                </h:selectOneMenu>
+                             
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label  style="color: #000">#{vaka.numerosEquipos}</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <h:inputText class="input is-info" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;" html5:placeholder="#{vaka.numerosEquipos} " value="#{ususarioSession.numeroequipos}"  required="true" id="numeroEquipos"   validatorMessage="#{vaka.datosMinimos}" requiredMessage="#{vaka.escribeDato}">
+                            <f:validateLength minimum="1" maximum="2"></f:validateLength>
+                            </h:inputText>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </div>
+                    <h:message showSummary="false" for="numeroEquipos" style="color: red"/>
+                    </div>
+
+                    <h:commandButton  class="button is-info" value="#{vaka.crearTorneo}" action="#{ususarioSession.crearTorneo()}"> </h:commandButton>
+                    <br/>
+                </h:form>
+               <h:form>
+                  <div class="row">
+                      <br/>
+                        <div style="display:#{ususarioSession.estado};" class="col-lg-9">
+                            <article class="message #{ususarioSession.color1}">
+                                <div class="message-header">
+                                    <p>Mensaje del Sistema</p>
+                                    <h:commandButton class="delete" image="" action="#{ususarioSession.cachet()}"></h:commandButton>
+                                </div>
+                                <div class="message-body">
+                                    #{ususarioSession.mensaje1}
+                                </div>
+                            </article>
+                        </div>  
+                    </div>
+                    <br/>   
+               </h:form>
+             
+                <h:form enctype="multipart/form-data">
+                    <label  style="color: #000">#{vaka.registroTorneos} Txt</label>
+                    <div class="file">
+  <label class="file-label">
+      <h:inputFile class="file-input" value="#{ususarioSession.archivoCarga}" validator="#{ususarioSession.validarArchivo}" />   
+    <span class="file-cta">
+      <span class="file-icon">
+        <i class="fas fa-upload"></i>
+      </span>
+      <span class="file-label">
+       #{vaka.subirArchivo}
+      </span>
+    </span>
+  </label>
+                      <h:commandButton style="margin-left: 10px;" class="button is-info" value="#{vaka.registrarTorneo}" action="#{ususarioSession.ingresarDocumento()}"></h:commandButton>
+                      <br/>
+</div>
+   
+        </h:form>
+           </div>
+            <br/>    
+        </section>       
+        <!--Scripts-->
+        <script src="../estilos_Roles/js/jquery-3.1.1.min.js"></script>
+        <script src="../estilos_Roles/js/sweetalert2.min.js"></script>
+        <script src="../estilos_Roles/js/material.min.js"></script>
+        <script src="../estilos_Roles/js/ripples.min.js"></script>
+        <script src="../estilos_Roles/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="../estilos_Roles/js/main.js"></script>
+        <script>
+            $.material.init();
+        </script>
+
+        <script src="../css/picker/jquery.js"></script>
+        <script src="../css/picker/jquery.datetimepicker.full.js"></script>
+        <script type="text/javascript">
+            jQuery.datetimepicker.setLocale('es');
+
+            jQuery('.datetime').datetimepicker({
+                i18n: {
+                    de: {
+                        months: [
+                            'Januar', 'Februar', 'März', 'April',
+                            'Mai', 'Juni', 'Juli', 'August',
+                            'September', 'Oktober', 'November', 'Dezember',
+                        ],
+                        dayOfWeek: [
+                            "So.", "Mo", "Di", "Mi",
+                            "Do", "Fr", "Sa.",
+                        ]
+                    }
+                },
+
+                format: 'd/m/Y' + ' H:00'
+            });
+
+        </script>
+          <script type="text/javascript">
+              function validar(e) { // 1
+              tecla = (document.all) ? e.keyCode : e.which; // 2
+              if (tecla == 8) return true; // 3
+              patron = /[A-Za-zñÑ]/; // 4
+              te = String.fromCharCode(tecla); // 5
+              return patron.test(te); // 6
+              }
+              
+        </script>
+        <script type="text/javascript">
+            $('.exit-system').on('click', function(){
+		swal({
+		  	title: 'Esta Seguro de Salir?',
+		  	text: "Are you sure you want to leave this page?",
+		  	type: 'warning',
+		  	showCancelButton: true,
+		  	confirmButtonColor: '#3BD567',
+		  	cancelButtonColor: '#F44336',
+		  	confirmButtonText: '<i class="zmdi zmdi-run"></i> Si, Exit!',
+		  	cancelButtonText: '<i class="zmdi zmdi-close-circle"></i> No, Cancel!'
+		}).then(function () {
+			window.location.href="../index.xhtml";
+		});
+	});
+        </script>
+
+    </h:body>
+</html>
+

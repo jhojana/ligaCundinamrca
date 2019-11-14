@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link href="imagenes/img/logocorreccion.png" rel="shortcut icon" type="image/png"/>
+        <title>perfil</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="css/estilos_formulario.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+     <f:loadBundle basename="edu.f1694094.properties.#{idiomaSession.idioma == null ?'espaniol':idiomaSession.idioma}" var="vaka"></f:loadBundle>
+
+    </h:head>
+    <h:body>
+        <!-- Boton Idioma --> 
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+
+            }
+            body{
+
+                background: url(../imagenes/imagesn/cos.jpg) no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+
+
+            }
+
+
+            @media (max-width:900px){
+
+                body{
+                    background-image: url(../imagenes/imagesn/cos.jpg);
+                    background-size: auto;
+
+
+                }
+            }
+
+            .custom-file-label::after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 3;
+                display: block;
+                height: calc(1.5em + .75rem);
+                padding: .375rem .75rem;
+                line-height: 1.5;
+                color: #495057;
+                content: "#{vaka.fil}";
+                background-color: #e9ecef;
+                border-left: inherit;
+                border-radius: 0 .25rem .25rem 0;
+            }
+
+            @media (min-width: 340px){
+                .SC4xFe {
+                    -webkit-transition: opacity .2s ease-in-out;
+                    transition: opacity .2s ease-in-out;
+                    background-color: rgba(32,33,36,0.6);
+                    bottom: 0;
+                    height: 33%;
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    opacity: 0;
+                }   
+            }
+
+            @media (min-width: 340px){
+                .EyVCdb {
+                    background-image: url(../imagenes/img/foto.ico);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    height: 100%;
+                    opacity: .8;
+                }   
+            }
+
+            .imgRedonda {
+                width:150px;
+                height:150px;
+                border-radius:150px;
+            }
+            .spana{
+                cursor:pointer;
+            }
+            .inf{
+                width: 0.1px;
+                height: 0.1px;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                z-index: -1;
+            }
+        </style>
+        <div>
+          <nav class="full-box dashboard-Navbar">
+                <h:form>
+                    <h:commandButton value="Español"
+                                     action="#{idiomaSession.cambiarIdioma('espaniol')}"
+                                     rendered="#{idiomaSession.idioma== 'ingles'}" image="../imagenes/img/colombiana.png" style="width: 60px; height: 35px; margin-top: 4px; float: right; margin-right: 8px;"/>
+                   
+                    <h:commandButton value="Ingles"
+                                     action="#{idiomaSession.cambiarIdioma('ingles')}"
+                                     rendered="#{idiomaSession.idioma== 'espaniol'}" image="../imagenes/img/inglesa.png" style="width: 60px; height: 35px; margin-top: 4px; float: right; margin-right: 8px;"/>
+                   
+                </h:form>    
+            </nav>
+        </div>
+        <br/>
+        <br/>
+
+        <!-- Fin Boton Idioma -->   
+        <!-- Contenedor -->  
+        <div class="container" style=" color: white; background: rgba(0,0,0,0.6);">
+            <!-- Formulario -->
+            <br/>
+            <h:form enctype="multipart/form-data">
+                
+                <label for="NombreTorneo">nombre torneo</label>
+                <div class="input-group">                  
+                    <h:inputText id="NombreTorneo" required="true" class="form-control" value="#{ususarioSession.torneoLog.nombreTorneo}" disabled="true"></h:inputText>
+                    <div class="input-group-prepend">
+                        <span  data-toggle="modal" data-target="#NombreTorneo" class="input-group-text spana" title="#{vaka.editar}"><img src="../imagenes/img/editar.ico" width="24.5px;"></img></span>
+                    </div>
+                </div> 
+                <label for="FechaInicio">fecha inicio</label>
+                <div class="input-group">
+                    <h:inputText id="FechaInicio" required="true" class="form-control" value="#{ususarioSession.usuarioLong.usuApellidos}" disabled="true"></h:inputText>
+                    <div class="input-group-prepend">
+                        <span  data-toggle="modal" data-target="#FechaInicio" class="input-group-text spana" title="#{vaka.editar}"><img src="../imagenes/img/editar.ico" width="24.5px;"></img></span>
+                    </div>
+                </div>  
+                <label for="FechaFinal">Fecha Final</label>
+                <div class="input-group">
+                    <h:inputText id="FechaFinal" class="form-control validan" value="#{ususarioSession.usuarioLong.usuDocumento}" disabled="true"></h:inputText>
+                    <div class="input-group-prepend">
+                        <span  data-toggle="modal" data-target="#FechaFinal" class="input-group-text spana" title="#{vaka.editar}"><img src="../imagenes/img/editar.ico" width="24.5px;"></img></span>
+                    </div>
+                </div>
+                <label for="Categoria">Categoria</label>
+                <div class="input-group">
+                    <h:inputText id="Categoria" required="true" class="form-control" value="#{ususarioSession.usuarioLong.usuTelefono}" disabled="true"></h:inputText>
+                    <div class="input-group-prepend">
+                        <span  data-toggle="modal" data-target="#Categoria" class="input-group-text spana" title="#{vaka.editar}"><img src="../imagenes/img/editar.ico" width="24.5px;"></img></span>
+                    </div>
+                </div>
+            </h:form>   
+            <!-- Fin Formulario -->  
+            <br/>
+        </div>
+        <!-- Nombre -->      
+        <div class="modal fade" id="NombreTorneo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <h:form>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">#{vaka.nombre}</label>
+                                <h:inputText class="form-control" id="recipient-name" value="#{ususarioSession.torneoLog.nombreTorneo}"/>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">#{vaka.cerrar}</button>
+                            <h:commandButton class="btn btn-primary" value="#{vaka.actualizar}" action="#{ususarioSession.actualizarDatosTorneo()}"></h:commandButton>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        <!-- Apellido --> 
+        <div class="modal fade" id="FechaInicio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <h:form>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">#{vaka.apellido}</label>
+                                <h:inputText class="form-control" id="recipient-name" value="#{ususarioSession.usuarioLong.usuApellidos}"/>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">#{vaka.cerrar}</button>
+                            <h:commandButton class="btn btn-primary" value="#{vaka.actualizar}" action="#{ususarioSession.actualizarDatos()}"></h:commandButton>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        <!-- Documento --> 
+        <div class="modal fade" id="FechaFinal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <h:form>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">#{vaka.documento}</label>
+                                <h:inputText class="form-control" id="recipient-name" value="#{ususarioSession.usuarioLong.usuDocumento}"/>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">#{vaka.cerrar}</button>
+                            <h:commandButton class="btn btn-primary" value="#{vaka.actualizar}" action="#{ususarioSession.actualizarDatos()}"></h:commandButton>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        <!-- Telefono --> 
+        <div class="modal fade" id="Categoria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <h:form>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">#{vaka.telefono}</label>
+                                <h:inputText class="form-control" id="recipient-name" value="#{ususarioSession.usuarioLong.usuTelefono}"/>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">#{vaka.cerrar}</button>
+                            <h:commandButton class="btn btn-primary" value="#{vaka.actualizar}" action="#{ususarioSession.actualizarDatosTorneo()}"></h:commandButton>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+     
+        <!-- Bootstrap CSS Y JQUERY -->	
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <!-- validar letras -->
+
+        <script type="text/javascript">
+            function validar(e) { // 1
+                tecla = (document.all) ? e.keyCode : e.which; // 2
+                if (tecla == 8)
+                    return true; // 3
+                patron = /[A-Za-zñÑ]/; // 4
+                te = String.fromCharCode(tecla); // 5
+                return patron.test(te); // 6
+            }
+        </script>
+
+
+        <!--onkeypress="if (event.which & lt; 48 || event.which & gt; 57) return false;"-->
+    </h:body>
+</html>
+

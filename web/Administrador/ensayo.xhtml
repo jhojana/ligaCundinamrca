@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+
+        <title> equipos admin</title>
+  <link href="../imagenes/img/logocorreccion.png" rel="shortcut icon" type="image/png"></link>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+        <link rel="stylesheet" href="../estilos_Roles/css/main.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"></link>
+    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <f:loadBundle id="loadb" basename="edu.f1694094.properties.#{idiomaSession.idioma}" var="vaka"></f:loadBundle>
+   
+    
+    </h:head>
+
+    <h:body>
+
+        <!-- Datos de menu  -->
+        <section class="full-box cover dashboard-sideBar">
+            <div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
+            <div class="full-box dashboard-sideBar-ct">
+
+
+                <!--Titulo de Inicio -->
+                <div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
+                    #{vaka.bienvenida} <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+                </div>
+                <!-- Infornacion de usuario  -->
+                <div class="full-box dashboard-sideBar-UserInfo">
+                    <figure class="full-box">
+                        <a href="../Actualizar Informacion/Actualizar_Datos.xhtml"><img src="#{ususarioSession.usuarioLong.rutaImgUsuario}" alt="UserIcon"/></a>
+                        <figcaption class="text-center text-titles">#{ususarioSession.usuarioLong.usuNombres}</figcaption>
+
+                    </figure>
+                     <ul class="full-box list-unstyled text-center">
+                        <li>
+                            <a href="../Actualizar Informacion/Actualizar_Datos.xhtml">
+                                <i class="zmdi zmdi-settings" title="#{vaka.ajustes}"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.xhtml" class="btn-exit-system" title="#{vaka.salir}">
+                                <i class="zmdi zmdi-power"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--  Menu -->
+                <ul class="list-unstyled full-box dashboard-sideBar-Menu">
+                    <li>
+                        <a href="inicioAdmin.xhtml">
+                            <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> #{vaka.inicio}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!" class="btn-sideBar-SubMenu">
+                            <i class="zmdi zmdi-case zmdi-hc-fw"></i> #{vaka.torneo} <i class="zmdi zmdi-caret-down pull-right"></i>
+                        </a>
+                        <ul class="list-unstyled full-box">
+                            <li>
+                                <a href="RegistrodeTorneo.xhtml"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>#{vaka.crarTor}</a>
+                            </li>
+                            <li>
+                                <a href="listarTorneo.xhtml"><i class="zmdi zmdi-book zmdi-hc-fw"></i>#{vaka.listaTor}</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#!" class="btn-sideBar-SubMenu">
+                            <i class="zmdi zmdi-account-add zmdi-hc-fw"></i> #{vaka.listar1} <i class="zmdi zmdi-caret-down pull-right"></i>
+                        </a>
+                        <ul class="list-unstyled full-box">
+                            <li>
+                                <a href="ListarJugadoresadmin.xhtml"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> #{vaka.jygadoresRegistrados}</a>
+                            </li>
+                            <li>
+                                <a href="Lista_de_Equiposadmin.xhtml"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> #{vaka.equipo}</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#!" class="btn-sideBar-SubMenu">
+                            <i class="zmdi zmdi-account zmdi-hc-fw"></i> <i class="zmdi zmdi-caret-down pull-right"></i>#{vaka.reportes}
+                        </a>
+                        <ul class="list-unstyled full-box">
+                            <li>
+                                <a href="contactos.xhtml"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>#{vaka.contacto}</a>
+                            </li>
+                        
+
+                        </ul>
+                    </li>                      
+                    <li>
+                        <a href="#!" class="btn-sideBar-SubMenu">
+                            <i class="zmdi zmdi-account zmdi-hc-fw"></i> <i class="zmdi zmdi-caret-down pull-right"></i>#{vaka.enviarCorreos}
+                        </a>
+                        <ul class="list-unstyled full-box">
+                            <li>
+                                <a href="Eventos.xhtml"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>#{vaka.correoElectronico}</a>
+                            </li>
+                        </ul>
+                    </li>                    
+                </ul>
+            </div>
+        </section>
+        <!-- Fin de menu -->
+
+        
+        
+        
+        
+        
+        
+        
+        <section class="full-box dashboard-contentPage">
+                    
+ <nav class="full-box dashboard-Navbar">
+                  <h:form>
+                    <h:commandButton value="Español"
+                                     action="#{idiomaSession.cambiarIdioma('espaniol')}"
+                                     rendered="#{idiomaSession.idioma== 'ingles'}" image="../imagenes/img/colombiana.png" style="width: 60px; height: 35px; margin-top: 4px; float: right; margin-right: 8px;"/>
+                   
+                    <h:commandButton value="Ingles"
+                                     action="#{idiomaSession.cambiarIdioma('ingles')}"
+                                     rendered="#{idiomaSession.idioma== 'espaniol'}" image="../imagenes/img/inglesa.png" style="width: 60px; height: 35px; margin-top: 4px; float: right; margin-right: 8px;"/>
+                   
+                </h:form>   
+            </nav>
+
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+<script src="../js/jquery.canvasjs.min.js" type="text/javascript"></script>
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "Car Parts Sold in Different States"
+	},
+	subtitles: [{
+		text: "Click Legend to Hide or Unhide Data Series"
+	}], 
+	axisX: {
+		title: "States"
+	},
+	axisY: {
+		title: "Oil Filter - Units",
+		titleFontColor: "#4F81BC",
+		lineColor: "#4F81BC",
+		labelFontColor: "#4F81BC",
+		tickColor: "#4F81BC"
+	},
+	axisY2: {
+		title: "Clutch - Units",
+		titleFontColor: "#C0504E",
+		lineColor: "#C0504E",
+		labelFontColor: "#C0504E",
+		tickColor: "#C0504E"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor: "pointer",
+		itemclick: toggleDataSeries
+	},
+	data: [{
+		type: "column",
+		name: "Oil Filter",
+		showInLegend: true,      
+		yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+			#{ususarioSession.geafica1}
+		]
+	},
+	{
+		type: "column",
+		name: "Clutch",
+		axisYType: "secondary",
+		showInLegend: true,
+		yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+			#{ususarioSession.geafica1}
+		]
+	}]
+});
+chart.render();
+
+function toggleDataSeries(e) {
+	if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	} else {
+		e.dataSeries.visible = true;
+	}
+	e.chart.render();
+}
+
+}
+</script>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+        </section>
+            
+  
+    </h:body>
+</html>
+
